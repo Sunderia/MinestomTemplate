@@ -13,7 +13,6 @@ import net.minestom.server.world.DimensionType
 fun main() {
     val server = MinecraftServer.init()
     initServer()
-    // Start the server on port 25565
     server.start("0.0.0.0", 25565)
     println("Server started on 0.0.0.0:25565")
 }
@@ -25,7 +24,7 @@ fun initServer() {
     val instanceContainer = instanceManager.createInstanceContainer(fullbright)
 
     // Set the ChunkGenerator
-    instanceContainer.setGenerator { it.modifier().fillHeight(0, 40, Block.GRASS_BLOCK) }
+    instanceContainer.setGenerator { it.modifier().fillHeight(0, 40, Block.STONE) }
 
     initEventHandlers(instanceContainer)
 }
